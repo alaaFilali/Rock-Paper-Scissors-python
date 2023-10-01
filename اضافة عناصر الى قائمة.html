@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>اضافة عناصر الى قائمة</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">اضافة عناصر الى قائمة</h1>
+        <div class="content">
+            <p>
+                في هذا الدرس سوف اتحدث عن شيء مهم جدا وسوف نستعمله بكثرة في الدروس القادمة
+                وهو مفهوم القائمة في بايثون والقائمة هي عبارة عن 
+                data structure 
+                او هيكلة بيانات وهي ببساطة طريقة لتنظيم البيانات و تخزينها 
+            </p>
+            <p>
+                رأينا في السابق كيف نخزن المعلومات بطريقة فردية في السابق عن طريق المتغيرات 
+            </p>
+            <pre><code>
+a = 3 
+b = "hello"
+            </code></pre>
+            <p>
+                ولكننا نخزن نوعا واحدة فقط او معلومة واحدة فقط ولكن احيانا نريد تخزين 
+                مجموعة من المعلومات مع بعض التي لديها رابطة فيما بينها مثلا رادت 
+                تخزين اسماء ولايات الجزائر فلا تستطيع تخيل نفسك تخزن كل ولاية في متغير 
+                فسوف تحتاج 
+                58
+                متغير 
+            </p>
+            <p>
+                بالاضافة الى انها لديها رابطة فيما بينها احيانا تريدها ان تكون مرتبة 
+                مثلا اردت تخزين اسماء الناس في الطابور مثلا واليوم سوف نتعلم حول القوائم 
+            </p>
+            <pre><code>
+list = [item1, item2]
+            </code></pre>
+            <p>
+                نسمي القائمة الخاصة بنا ثم بعد علامة المساوات نضع 
+                []
+                وداخلها نفصل بين العناصر بفاصلة 
+                فمثلا اردنا تخزين اسماء الفواكه في قائمة
+            </p>
+            <pre><code>
+fruits = ["Cherry", "Apple", "Pear"]
+            </code></pre>
+            <p>
+                الان اريد تخزين اسماء ولايات الجزائر في البرنامج الخاص بي: 
+            </p>
+            <pre><code>
+wilayas = ["Algiers", "Oran", "Constantine", "Blida", "Batna", "Setif", "Djelfa", "Annaba", "Sidi Bel Abbes", "Biskra",
+"Tebessa", "Tiaret", "Bejaia", "Tlemcen", "Bordj Bou Arreridj", "Bechar", "Skikda", "Souk Ahras", "Chlef",
+"M\'Sila", "Mostaganem", "Medea", "Tizi Ouzou", "El Oued", "Laghouat", "Ouargla", "Jijel", "Relizane",
+"Saida", "Guelma", "Ghardaia" "Mascara", "Khenchela", "Oum el Bouaghi", "El Bayadh", "Tamanrasset",
+"Tissemsilt", "Bouira", "Adrar", "Tindouf", "Boumerdes", "El Tarf", "Tipasa", "Illizi", "Naama",
+"Ain Temouchent", "Ain Defla", "Mila", "Ouled Djellal", "El M\'Ghair", "Touggourt", "El Meniaa",
+"Beni Abbès", "Timimoune", "In Salah", "Bordj Badji Mokhtar", "Djanet", "In Guezzam"]
+            </code></pre>
+            <p>
+                فاذا اردت طباعة اول ولاية كل ماعلى فعله هو استعمال اسم القائمة ثم باستخدام 
+                []
+                اضع داخلها موضع العنصر في القائمة واول عنصر عند المؤشر 
+                0
+            </p>
+            <pre><code>
+print(wilayas[0])
+            </code></pre>
+            <pre><code>
+Algiers
+            </code></pre>
+            <p>
+                لو مررت المؤشر كعدد سلبي سوف يتم العدد بالعكس من القائمة وسوف احصل على اخر عنصر في القائمة
+            </p>
+            <pre><code>
+print(wilayas[-1])
+            </code></pre>
+            <pre><code>
+In Guezzam
+            </code></pre>
+            <p>
+                الان ماذا لو اردت تغيير عنصر من عناصر القائمة؟ استعمل 
+                []
+                واجعلها تساوي قيمة جديدة
+            </p>
+            <pre><code>
+wilayas[0] = "algierssss"
+
+print(wilayas[0])
+            </code></pre>
+            <pre><code>
+algierssss
+            </code></pre>
+            <p>
+                الان ماذا لو اردت ان تضيف عنصر جديد في نهاية القائمة؟ نستعمل دالة تسمى 
+                append
+            </p>
+            <pre><code>
+wilayas.append("new_wilaya")
+            </code></pre>
+            <p>
+                وسوف يتم تحديث القائمة واضافة العنصر الجديد 
+                new_wilaya 
+                في نهاية القائمة
+            </p>
+            <p>
+                هناك دوال اخرى كثيرة يمكنك استعمالها مع القوائم ويمكنك ايجادها في 
+                ال 
+                <a href="https://docs.python.org/3/tutorial/datastructures.html">docs</a>
+                او ببساطة بالبحث عنها في 
+                google 
+            </p>
+            <p>
+                مثلا لاضافة عنصر واحدة نستعمل 
+                append 
+                ولكن لاضافة عدة عناصر في نهاية قائمة نستعمل 
+                extend
+                ونمرر قائمة
+            </p>    
+            <pre><code>
+wilayas.extend(["wilaya1", "wilaya2"])
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
