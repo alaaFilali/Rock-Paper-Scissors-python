@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>تمرين حول العشوائية</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">تمرين حول العشوائية </h1>
+        <div class="content">
+            <p>
+                التعليمات: 
+            </p>
+            <p>
+                اكتب برنامج يقوم بمحاكات رمية قطعة نقدية وسوف يقوم بطباعة اما 
+                heads 
+                او 
+                tails
+            </p>
+            <p>
+                هناك العديد من الطرق لفعل ذلك ولكن لنتمرن على ما تعلمنا في الدرس السابق 
+                سوف نقوم بتوليد عدد عشوائي بين 
+                0
+                و 
+                1
+                ثم نستعمل تلك النتيجة لطباعة احد الكلمتين 
+                و ال 
+                1
+                سوف يمثل 
+                heads 
+                اما 
+                0
+                سوف يمثل 
+                tails 
+            </p>
+            <p>
+                نتيجة البرنامج النهائية سوف تكون هكذا: 
+            </p>
+            <pre><code>
+heads
+            </code></pre>
+            <p>
+                او هكذا: 
+            </p>
+            <pre><code>
+tails
+            </code></pre>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                ببساطة نقوم بتوليد رقم عشوائي بين 
+                0
+                و 
+                1
+                باستخدام مكتبة 
+                random 
+                ثم باستعمال عبارة 
+                if else 
+                سوف نقوم بطباعة اما 
+                heads 
+                او 
+                tails
+            </p>
+            <pre><code>
+import random 
+
+random_side = random.randint(0, 1)
+
+if random_side == "1":
+    print("Heads")
+else:
+    print("Tails")
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
