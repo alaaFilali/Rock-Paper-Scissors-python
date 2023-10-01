@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>تمرين من سوف يدفع الفاتورة</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">تمرين من سوف يدفع الفاتورة</h1>
+        <div class="content">
+            <p>
+                هناك ظاهرة تحدث في لندن وهي لو كنت في مطعم ورأيت بعض الناس 
+                يبدو عليهم الثراء عندما يأتي وقت دفع الفاتورة يضعون بطاقاتهم 
+                البنكية في صندوق ويتم اختيار واحدة عشوائيا لدفع الفاتورة وهذا 
+                ما سوف نقوم بمحاكاته
+            </p>
+            <p>
+                التعليمات: 
+            </p>
+            <p>
+                اكتب برنامج يقوم باختيار اسم عشوائي من قائمة اسماء والاسم المختار 
+                سوف يدفع الفاتورة 
+            </p>
+            <p>
+                الان لاحظ هذا السطر البرمجي: 
+            </p>
+            <pre><code>
+names_string = input("Give me everybody's names, seperated by a comma. ")
+names = names_string.split(", ")
+            </code></pre>
+            <p>
+                سوف يطلب من المستخدم ان يدخل اسماء الاشخاص ويفصل بينهم بفاصلة وفراغ
+                وما سوف يفعله السطر الثاني هو تحويل تلك الاسماء الى قائمة اسماء 
+                عن طريق دالة 
+                split
+                وما مررته داخلها هو كيف سوف يفصل بين الاسماء والاجابة عن طريق 
+                الفاصلة والفراغ
+                اي لكي يعمل البرنامج يجب على المستخدم ان يدخل الاسماء مفرقة بينهم بفاصلة هكذا: 
+            </p>
+            <pre><code>
+Alaa, Amine, Aboubakr, Salim, Ibrahim
+            </code></pre>
+            <p>
+                والنتيجة الاخيرة للبرنامج سوف تكون كالتالي: 
+            </p>
+            <pre><code>
+Give me everybody's names, seperated by a comma. Alaa, Amine, Aboubakr, Salim, Ibrahim
+Alaa is going to buy the meal today!
+            </code></pre>
+            <p>
+                حظا موفقا في حل التمرين.
+            </p>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                الان لدينا قائمة الاسماء التي ادخلها المستخدم 
+                names 
+                ويمكنني ان اطبع مثلا الاسم الاول عن طريق استخدام 
+                []
+                واضع داخلها مؤشر الاسم والاسم الاول عند ال 
+                0
+            </p>
+            <pre><code>
+print(names[0])
+            </code></pre>
+            <p>
+                الان نحن نريد ان نختار اسم عشوائي من القائمة اذن نبدل المؤشر بعدد عشوائي 
+                ويمكننا الحصول عليه من مكتبة 
+                random
+                واستعمال دالة 
+                randint 
+                وتمرير مجال ولكن ماهو المجال الذي سوف نمرره؟ 
+            </p>
+            <p>
+                البداية هي 
+                0
+                ولكن ماهي النهاية؟ فلو تفكر فيها قليلا هي مؤشر اخر عنصر ولكن نحن لا نعلم 
+                عدد الاسماء التي ادخلها المستخدم 
+            </p>
+            <p>
+                في السابق استخدمنا دالة 
+                len 
+                لنحسب عدد الاحرف في 
+                string 
+                ويمكننا استعمالها ايضا مع القوائم لتعطينا عدد العناصر في قائمة
+            </p>
+            <pre><code>
+print(len(names))
+            </code></pre>
+            <pre><code>
+5
+            </code></pre>
+            <p>
+                ولكن لو كان في قائمة 
+                5
+                عناصر مؤشر العنصر الاول هو 
+                0
+                اذن مؤشر العنصر الاخير هو 
+                4
+                و دالة 
+                len 
+                ترجع الطول اي في مثالنا 
+                5
+                اذن ببساطة نمرر طول القائمة ناقص واحد
+            </p>
+            <pre><code>
+import random 
+
+names_string = input("Give me everybody's names, seperated by a comma. ")
+names = names_string.split(", ")
+
+print( names[ random.randint( 0, len(names) - 1 ) ] )
+            </code></pre>
+            <p>
+                سوف اضيف متغير او اثنين لتسهيل قراءة الكود قليلا واظهر رسالة توضح من سوف يدفع الفاتورة
+            </p>
+            <pre><code>
+import random 
+
+names_string = input("Give me everybody's names, seperated by a comma. ")
+names = names_string.split(", ")
+
+num_items = len(names)
+random_choice = random.randint( 0, num_items - 1 )
+person_who_will_pay = names[random_choice]
+
+print(person_who_will_pay + "is going to pay the meal today!")
+            </code></pre>
+            <p>
+                في الحقيقة كان بامكاننا استعمال الدالة 
+                choice 
+                من مكتبة 
+                random 
+                التي نعطيها قائمة وسوف ترجع عنصر عشوائي من تلك القائمة وهو ما نحاول 
+                فعله الان ولكن نحن هنا نتعلم ونطبق ما نتعلمه والان تعرف كيف تعمل دالة 
+                choice
+            </p>
+            <pre><code>
+import random 
+
+names_string = input("Give me everybody's names, seperated by a comma. ")
+names = names_string.split(", ")
+
+person_who_will_pay = random.choice(names)
+
+print(person_who_will_pay + "is going to pay the meal today!")
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
