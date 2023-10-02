@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>القوائم المتداخلة</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">القوائم المتداخلة</h1>
+        <div class="content">
+            <p>
+                عندما نتعامل مع القوائم اكثر 
+                error 
+                سوف نصادفه هو 
+                IndexError 
+                ولكن ما معناه؟
+            </p>
+            <p>
+                في مثالنا السابق الخاص بولايات الجزائر لدينا قائمة ب 
+                58
+                ولاية 
+            </p>
+            <pre><code>
+wilayas = ["Algiers", "Oran", "Constantine", "Blida", "Batna", "Setif", "Djelfa", "Annaba", "Sidi Bel Abbes", "Biskra",
+"Tebessa", "Tiaret", "Bejaia", "Tlemcen", "Bordj Bou Arreridj", "Bechar", "Skikda", "Souk Ahras", "Chlef",
+"M\'Sila", "Mostaganem", "Medea", "Tizi Ouzou", "El Oued", "Laghouat", "Ouargla", "Jijel", "Relizane",
+"Saida", "Guelma", "Ghardaia" "Mascara", "Khenchela", "Oum el Bouaghi", "El Bayadh", "Tamanrasset",
+"Tissemsilt", "Bouira", "Adrar", "Tindouf", "Boumerdes", "El Tarf", "Tipasa", "Illizi", "Naama",
+"Ain Temouchent", "Ain Defla", "Mila", "Ouled Djellal", "El M\'Ghair", "Touggourt", "El Meniaa",
+"Beni Abbès", "Timimoune", "In Salah", "Bordj Badji Mokhtar", "Djanet", "In Guezzam"]
+            </code></pre>
+            <p>
+                حتى ولم تكن تعرف العدد يمكنك حساب عدد العناصر في القائمة عن طريق 
+                دالة 
+                len
+            </p>
+            <pre><code>
+print(len(wilayas))
+            </code></pre>
+            <pre><code>
+58
+            </code></pre>
+            <p>
+                اذن الولاية الاخيرة في القائمة هي 
+                "عين قزام"
+                وهي عند المؤشر 
+                57
+            </p>
+            <pre><code>
+print(wilayas[57])
+            </code></pre>
+            <pre><code>
+In Guezzam
+            </code></pre>
+            <p>
+                الان ماذا لو اردنا الحصول على العنصر في القائمة عن المؤشر 
+                58
+                سوف نحصل على 
+                IndexError
+                ومعناه انه لايوجد عنصر عند ذلك المؤشر 
+            </p>
+            <p>
+                الان لدينا قائمة اخرى بالخضر والفواكه
+            </p>
+            <pre><code>
+food = ["Strawberries", "Spinach", "Kale", "Apples", "Grapes", "Peaches"]
+            </code></pre>
+            <p>
+                ولكن كما ترى هذه قائمة طعام تحتوي على خضر وفواكه فماذا لو اردنا فصل 
+                كل نوع على حدى ولكن مع ابقائهم داخل قائمة 
+                الطعام 
+            </p>
+            <p>
+                يمكننا وضع كل نوع في قائمة خاصة به 
+            </p>
+            <pre><code>
+fruits = ["Strawberries", "Apples", "Grapes", "Peaches"]
+vegetables = ["Spinach", "Kale"]
+            </code></pre>
+            <p>
+                ولكنهم كلهم عبارة عن طعام اذن يجب ان يكونو تحت قائة الطعام 
+                ولفعل ذلك نستعمل تداخل القوائم بان تكون عناصر قائمة 
+                هي قائمة اخرى 
+            </p>
+            <pre><code>
+food = [fruits, vegetabeles]
+            </code></pre>
+            <p>
+                اذا قمت بطباعة القائمة
+            </p>
+            <pre><code>
+[["Strawberries", "Apples", "Grapes", "Peaches"], ["Spinach", "Kale"]]
+            </code></pre>
+            <p>
+                اما اذا قمت بطباعة العنصر الاول من القائمة اي القائمة الاولى
+            </p>
+            <pre><code>
+["Strawberries", "Apples", "Grapes", "Peaches"]
+            </code></pre>
+            <p>
+                فلو اردت طباعة العنصر الاول من القائمة الاولى من القائمة 
+                food
+            </p>
+            <pre><code>
+print(food[0][0])
+            </code></pre>
+            <pre><code>
+Strawberries
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
