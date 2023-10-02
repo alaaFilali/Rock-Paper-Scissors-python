@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>تمرين خريطة الكنز</title>
+</head>
+
+<body>
+    <div class="book-page">
+        <h1 class="book-title">تمرين خريطة الكنز</h1>
+        <div class="content">
+            <p>
+                التعليمات: 
+            </p>
+            <p>
+                اكتب برنامج يضع علامة 
+                X
+                في المكان المختار في الخريطة
+            </p>
+            <p>
+                والخريطة تتكون من 
+                3
+                اسطر من المربعات الفارغة
+            </p>
+            <pre><code>
+     1     2      3
+1 ['⬜', '⬜', '⬜']
+2 ['⬜', '⬜', '⬜']
+3 ['⬜', '⬜', '⬜']
+            </code></pre>
+            <p>
+                سوف يدخل المستخدم المكان الذي يريد فيه وضع علامة ال 
+                X
+                عن طريق ادخال رقمين الاول هو رقم العمود العمودي والثاني هو رقم السطر الافقي
+            </p>
+            <p>
+                والنتيجة النهائية للبرنامج سوف تكون كالتالي: 
+            </p>
+            <pre><code>
+['⬜', '⬜', '⬜']
+['⬜', '⬜', '⬜']
+['⬜', '⬜', '⬜']
+Where do you want to put the treasure? 32
+['⬜', '⬜', '⬜']
+['⬜', '⬜', 'X']
+['⬜', '⬜', '⬜']
+            </code></pre>
+            <p>
+                هناك ثلاث قوائم تحمل المربعات الفارغة والخريطة هي عبارة 
+                عن قائمة تحتوي على القوائم الثلاث الاولى ونقوم بطباعة 
+                الخريطة هكذا: 
+            </p>
+            <pre><code>
+row1 = ['⬜', '⬜', '⬜']
+row2 = ['⬜', '⬜', '⬜']
+row3 = ['⬜', '⬜', '⬜']
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+            </code></pre>
+            <p>
+                الحل: 
+            </p>
+            <p>
+                عندما نسأل اللاعب ان يدخل رقمين الاول هو رقم العمود والرقم الثاني هو 
+                رقم السطر وهو عبارة عن 
+                string 
+                اذن سوف نستعمل ما تعلمناه من قبل لنقوم بفصل هذين الرقمين عن 
+                بعضها لنعرف ايهما خاص بالاعمدة والاسطر هكذا: 
+            </p>
+            <pre><code>
+position = input("Where do you want to put the teasure on? ")
+
+horizontal = position[0]
+vertical = position[1]
+            </code></pre>
+            <p>
+                بعد ذلك نحولها الى اعداد 
+                int 
+                لكي نستطيع استعمالها كمؤشرات 
+                والان ان اردت طباعة السطر الذي اختاره الاعب سوف امرر 
+                vertical 
+                للقائمة 
+                map
+            </p>
+            <pre><code>
+horizontal = int(position[0])
+vertical = int(position[1])
+
+print(map[vertical])
+            </code></pre>
+            <p>
+                الان لو ادخل المستخدم العدد 
+                3
+                للسطر الثالث سوف نحصل على خطأ 
+                indexError 
+                لان عدد القوائم 
+                3
+                اذن اخر قائمة عند المؤشر 
+                2
+                ونحن لانريد لللاعب ان يدخل 
+                0
+                كأول عدد هذه طريقتنا نحن كمبرمجين في التعامل مع الكود الخاص بنا 
+                ولحل هذا المشكل سوف ننقص 
+                1
+            </p>
+            <pre><code>
+print(map[vertical - 1])
+            </code></pre>
+            <p>
+                الان بعدما وصلت الى السطر الذي يريده المستخدم اريد الوصول الى العمود الذي 
+                يريده ايضا باستعمال 
+                horizontal
+                كمؤشر باستعمال متغير هكذا: 
+            </p>
+            <pre><code>
+selected_row = map[vertical - 1]
+selected_row[horizontal - 1] = "X"
+            </code></pre>
+            <p>
+                او هكذا: 
+            </p>
+            <pre><code>
+map[vertical - 1][horizontal - 1] = "X"
+            </code></pre>
+            <p>
+                الكود كاملا: 
+            </p>
+            <pre><code>
+row1 = ['⬜', '⬜', '⬜']
+row2 = ['⬜', '⬜', '⬜']
+row3 = ['⬜', '⬜', '⬜']
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the teasure on? ")
+
+horizontal = int(position[0])
+vertical = int(position[1])
+
+map[vertical - 1][horizontal - 1] = "X"
+
+print(f"{row1}\n{row2}\n{row3}")
+            </code></pre>
+        </div>
+    </div>
+</body>
+
+</html>
